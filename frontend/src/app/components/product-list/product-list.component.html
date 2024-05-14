@@ -1,0 +1,24 @@
+<div class="container">
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Image</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Units In Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products;let i=index">
+        <th scope="row" class="align-middle">{{ i + 1 }}</th>
+        <td>
+          <img [src]="product.imageUrl" height="50px">
+        </td>
+        <td class="align-middle">{{ product.name }}</td>
+        <td>{{ product.unitPrice | currency:'USD' }}</td>
+        <td class="align-middle">{{ product.unitsInStock }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
