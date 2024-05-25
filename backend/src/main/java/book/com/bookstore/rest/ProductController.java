@@ -29,7 +29,7 @@ public class ProductController {
         Product product = productService.getProductById(id);
         return ResponseEntity.ok(product);
     }
-    @GetMapping("/category")
+    @GetMapping("/search/findByCategoryId")
     public Page<Product> getProductsByCategoryId(@RequestParam(value = "id", defaultValue = "1") Long id,
                                                  @RequestParam(defaultValue = "0") int page,
                                                  @RequestParam(defaultValue = "10") int size) {
